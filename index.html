@@ -375,18 +375,12 @@
         }
         25% {
           opacity: 1;
-          transform: translate(
-              calc(var(--sx) * 0.4),
-              calc(var(--sy) * 0.4)
-            )
+          transform: translate(calc(var(--sx) * 0.4), calc(var(--sy) * 0.4))
             scale(1.35) rotate(35deg);
         }
         60% {
           opacity: 1;
-          transform: translate(
-              calc(var(--sx) * 0.8),
-              calc(var(--sy) * 0.8)
-            )
+          transform: translate(calc(var(--sx) * 0.8), calc(var(--sy) * 0.8))
             scale(1) rotate(70deg);
         }
         100% {
@@ -1118,8 +1112,8 @@
             <p class="detail-title-ar">الموعد</p>
             <p class="detail-title-en">time</p>
             <div class="detail-rule"></div>
-            <p class="detail-value">7:00 PM</p>
-            <p class="detail-sub">doors open 6:30</p>
+            <p class="detail-value">4:30 PM</p>
+            <p class="detail-sub">doors open 4:00 PM</p>
           </div>
           <div class="detail-card">
             <svg
@@ -1213,8 +1207,8 @@
         ).matches;
 
         // ---------- Countdown with smooth rolling transitions ----------
-        // Engagement day: 10 July 2026, 7:00 PM Cairo local time (EEST, UTC+3).
-        var target = new Date("2026-07-10T19:00:00+03:00").getTime();
+        // Engagement day: 10 July 2026, 4:00 PM Cairo local time (EEST, UTC+3).
+        var target = new Date("2026-07-10T16:00:00+03:00").getTime();
         var timer;
         function set(id, val) {
           var el = document.getElementById(id);
@@ -1274,7 +1268,8 @@
             d.style.left = left + "%";
             // rise duration + faster twinkle duration (comma-separated per animation)
             d.style.animationDuration = dur + "s, " + twk.toFixed(1) + "s";
-            d.style.animationDelay = delay + "s, " + (delay / 2).toFixed(1) + "s";
+            d.style.animationDelay =
+              delay + "s, " + (delay / 2).toFixed(1) + "s";
             d.style.setProperty("--dust-drift", drift + "px");
             d.style.setProperty("--dust-opacity", op.toFixed(2));
             field.appendChild(d);
